@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap");
+      body {
+        font-family: "Zen Maru Gothic", sans-serif;
+      }
+
+      #menu-section {
+        margin-top: 20px;
+        font-size: 20px;
+        font-weight: bolder;
+      }
+
+      #twitter-icon {
+        margin-bottom: 20px;
+        color: #00acee;
+      }
+      .list-group-item {
+        border: none;
+        padding-bottom: 20px;
+      }
+
+      #tweet-button {
+        background-color: #00acee;
+        border: none;
+        border-radius: 10px;
+        font-size: 20px;
+        font-weight: bolder;
+      }
+
+      #tweet-section {
+        padding-left: 70px;
+        padding-top: 30px;
+      }
+
+      h5 {
+        font-weight: bolder;
+        margin-bottom: 10px;
+      }
+
+      .tweet-box img {
+        width: 50px;
+        height: 50px;
+        margin-top: 20px;
+      }
+
+      .tweet-box input {
+        width: 90%;
+        height: 60px;
+        border: none;
+        padding-left: 20px;
+        padding-top: 20px;
+        font-size: 20px;
+        margin-top: auto;
+      }
+
+      #emoji-container ul {
+        padding-left: 60px;
+      }
+
+      #emoji-container li {
+        color: #00acee;
+      }
+
+      #tweet-button-tweet-box button {
+        margin-top: -45px;
+        border: none;
+        border-radius: 50px;
+        font-size: 15px;
+        background-color: #00acee;
+      }
+
+      #tweet-newsfeed-container {
+        margin-top: 10px;
+      }
+
+      #tweet-newsfeed-container img {
+        width: 50px;
+        height: 50px;
+      }
+
+      #tweet-newsfeed-container span {
+        color: #b9b7b7;
+      }
+
+      #tweet-newsfeed-container .card-text {
+        padding-left: 55px;
+      }
+
+      #feed-emoji-container li {
+        padding-left: 40px;
+        color: #b9b7b7;
+      }
+
+      #misc-section {
+        padding-left: 70px;
+        padding-top: 30px;
+      }
+
+      #misc-section input {
+        padding-left: 20px;
+      }
+
+      #trend-container {
+        padding-top: 20px;
+      }
+      #trend-header {
+        padding-bottom: 20px;
+      }
+      #small-gray-words {
+        font-size: smaller;
+        margin-bottom: -5px;
+        color: #b9b7b7;
+      }
+
+      #follow-container img {
+        width: 50px;
+        height: 50px;
+      }
+
+      #follow-container button {
+        background-color: #00acee;
+        border: none;
+        border-radius: 10px;
+        font-size: 15px;
+        font-weight: bolder;
+        margin-top: 15px;
+      }
+
+      #follow-container .card {
+        margin-bottom: -30px;
+      }
+
+      #tweet-username {
+        margin-left: 50px;
+        margin-top: -20px;
+        color: #b9b7b7;
+      }
+
+      #show-more-follow {
+        color: #00acee;
+        font-weight: bolder;
+        margin-top: 30px;
+      }
+
+      #terms-container {
+        margin-top: 30px;
+      }
+
+      #terms-container p {
+        font-size: smaller;
+        margin-bottom: 10px;
+        color: #b9b7b7;
+      }
+
+      #message-button {
+        width: 400px;
+        font-weight: bolder;
+      }
+
+      #user-bottom-bar-container {
+        padding-left: 280px;
+      }
+
+      #user-bottom-bar-container img {
+        width: 50px;
+        height: 50px;
+      }
+
+      #user-bottom-bar-container span {
+        margin-left: 40px;
+      }
+    </style>
+    <title>TwitterClone</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <!-- Menu section starts -->
+        <div class="col-2" id="menu-section">
+          <ul class="list-group">
+            <li class="list-group-item" id="twitter-icon">
+              <i class="bi bi-twitter"></i>
+            </li>
+            <li class="list-group-item">
+              <i class="bi bi-house-door-fill"></i> Home
+            </li>
+            <li class="list-group-item"><i class="bi bi-hash"></i> Explore</li>
+            <li class="list-group-item">
+              <i class="bi bi-bell-fill"></i> Notifications
+            </li>
+            <li class="list-group-item">
+              <i class="bi bi-envelope"></i> Messages
+            </li>
+            <li class="list-group-item">
+              <i class="bi bi-bookmark-fill"></i> Bookmarks
+            </li>
+            <li class="list-group-item">
+              <i class="bi bi-card-list"></i> Lists
+            </li>
+            <li class="list-group-item">
+              <i class="bi bi-file-person"></i> Profile
+            </li>
+            <li class="list-group-item">
+              <i class="bi bi-three-dots"></i> More
+            </li>
+          </ul>
+          <div class="d-grid gap-2">
+            <button class="btn btn-primary" type="button" id="tweet-button">
+              Tweet
+            </button>
+          </div>
+        </div>
+        <!-- Menu section ends -->
+        <!-- Tweet section starts -->
+        <div class="col-6" id="tweet-section">
+          <h5>Home</h5>
+          <!-- Tweet input starts -->
+          <div class="tweet-box">
+            <img
+              class="rounded-circle"
+              src="https://images.unsplash.com/photo-1583687534963-565854a3d6d8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=880&q=80"
+            />
+            <input type="text" placeholder="What's happening?" />
+            <div id="emoji-container">
+              <ul class="list-group list-group-horizontal">
+                <li class="list-group-item"><i class="bi bi-images"></i></li>
+                <li class="list-group-item">
+                  <i class="bi bi-dash-square"></i>
+                </li>
+                <li class="list-group-item">
+                  <i class="bi bi-border-width"></i>
+                </li>
+                <li class="list-group-item">
+                  <i class="bi bi-emoji-sunglasses"></i>
+                </li>
+                <li class="list-group-item"><i class="bi bi-calendar3"></i></li>
+              </ul>
+            </div>
+            <div id="tweet-button-tweet-box">
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button class="btn btn-primary me-md-2" type="button">
+                  Tweet
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Tweet input ends -->
+          <!-- Tweet NewsFeed starts -->
+          <div id="tweet-newsfeed-container">
+            <div class="card border-0">
+              <div class="card-body">
+                <img
+                  src="https://images.unsplash.com/photo-1597626133663-53df9633b799?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=880&q=80"
+                  class="img-fluid rounded-circle"
+                  alt="user-img"
+                />
+                <h6 class="card-title" style="display: inline">
+                  <strong>Meowy D. Kitty</strong>
+                </h6>
+                <i class="bi bi-patch-check-fill" style="color: #00acee"></i>
+                <span style="font-style: italic">@kittyD</span>
+                <span>- Nov 03</span>
+                <span style="float: right"
+                  ><i class="bi bi-three-dots"></i
+                ></span>
+                <p class="card-text">
+                  I am going to be the King of Kitties! 😼💪
+                </p>
+                <div id="feed-emoji-container">
+                  <ul class="list-group list-group-horizontal">
+                    <li class="list-group-item">
+                      <i class="bi bi-chat"></i>&emsp;33 &emsp;&emsp;
+                    </li>
+                    <li class="list-group-item">
+                      <i class="bi bi-arrow-repeat"></i>&emsp;4.6k &emsp;&emsp;
+                    </li>
+                    <li class="list-group-item">
+                      <i class="bi bi-heart"></i>&emsp;17.8k &emsp;&emsp;
+                    </li>
+                    <li class="list-group-item">
+                      <i class="bi bi-box-arrow-up"></i>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="card border-0">
+              <div class="card-body">
+                <img
+                  src="https://images.unsplash.com/photo-1611063959313-61ad0207dd12?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=880&q=80"
+                  class="img-fluid rounded-circle"
+                  alt="user-img"
+                />
+                <h6 class="card-title" style="display: inline">
+                  <strong>Roromoa Kuro</strong>
+                </h6>
+                <i class="bi bi-patch-check-fill" style="color: #00acee"></i>
+                <span style="font-style: italic">@mwordmaster</span>
+                <span>- Nov 05</span>
+                <span style="float: right"
+                  ><i class="bi bi-three-dots"></i
+                ></span>
+                <p class="card-text">
+                  *yawn* Today, I don't feel like doing anything! I just wanna
+                  lay in my cardbox 🥱
+                </p>
+                <div id="feed-emoji-container">
+                  <ul class="list-group list-group-horizontal">
+                    <li class="list-group-item">
+                      <i class="bi bi-chat"></i>&emsp;55 &emsp;&emsp;
+                    </li>
+                    <li class="list-group-item">
+                      <i class="bi bi-arrow-repeat"></i>&emsp;5.5k &emsp;&emsp;
+                    </li>
+                    <li class="list-group-item">
+                      <i class="bi bi-heart"></i>&emsp;55.8k &emsp;&emsp;
+                    </li>
+                    <li class="list-group-item">
+                      <i class="bi bi-box-arrow-up"></i>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="card border-0">
+              <div class="card-body">
+                <img
+                  src="https://i.pinimg.com/originals/05/8a/8b/058a8b1a93b825b710520ec0ede40783.png"
+                  class="img-fluid rounded-circle"
+                  alt="user-img"
+                />
+                <h6 class="card-title" style="display: inline">
+                  <strong>Tony Tony Chopper</strong>
+                </h6>
+                <i class="bi bi-patch-check-fill" style="color: #00acee"></i>
+                <span style="font-style: italic">@chopperdadoctor</span>
+                <span>- 12 hr</span>
+                <span style="float: right"
+                  ><i class="bi bi-three-dots"></i
+                ></span>
+                <p class="card-text">
+                  I wanna become a GREAT DOCTOR & see the world through my own
+                  eyes 🤩
+                </p>
+                <div id="feed-emoji-container">
+                  <ul class="list-group list-group-horizontal">
+                    <li class="list-group-item">
+                      <i class="bi bi-chat"></i>&emsp;24 &emsp;&emsp;
+                    </li>
+                    <li class="list-group-item">
+                      <i class="bi bi-arrow-repeat"></i>&emsp;3.2k &emsp;&emsp;
+                    </li>
+                    <li class="list-group-item">
+                      <i class="bi bi-heart"></i>&emsp;65.7k &emsp;&emsp;
+                    </li>
+                    <li class="list-group-item">
+                      <i class="bi bi-box-arrow-up"></i>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="card border-0">
+              <div class="card-body">
+                <img
+                  src="https://external-preview.redd.it/Qrqrk8TplnNQ5iD_C5-8VlJrOiTGtEzBdGpY3_1ZWd8.jpg?auto=webp&s=994d6548ec4b68c6041ecca2ca68f85ef202ff93"
+                  class="img-fluid rounded-circle"
+                  alt="user-img"
+                />
+                <h6 class="card-title" style="display: inline">
+                  <strong>Hachi-kung</strong>
+                </h6>
+                <i class="bi bi-patch-check-fill" style="color: #00acee"></i>
+                <span style="font-style: italic">@hachikung</span>
+                <span>- 8 hr</span>
+                <span style="float: right"
+                  ><i class="bi bi-three-dots"></i
+                ></span>
+                <p class="card-text">I LUV UUUUUUU 😍😍😍</p>
+                <div id="feed-emoji-container">
+                  <ul class="list-group list-group-horizontal">
+                    <li class="list-group-item">
+                      <i class="bi bi-chat"></i>&emsp;167 &emsp;&emsp;
+                    </li>
+                    <li class="list-group-item">
+                      <i class="bi bi-arrow-repeat"></i>&emsp;12.5k &emsp;&emsp;
+                    </li>
+                    <li class="list-group-item">
+                      <i class="bi bi-heart"></i>&emsp;99.8k &emsp;&emsp;
+                    </li>
+                    <li class="list-group-item">
+                      <i class="bi bi-box-arrow-up"></i>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="card border-0">
+              <div class="card-body">
+                <img
+                  src="https://www.gamereactor.se/media/35/_1923543b.jpg"
+                  class="img-fluid rounded-circle"
+                  alt="user-img"
+                />
+                <h6 class="card-title" style="display: inline">
+                  <strong>Anakin Skywalker</strong>
+                </h6>
+                <i class="bi bi-patch-check-fill" style="color: #00acee"></i>
+                <span style="font-style: italic">@darthvader</span>
+                <span>- now</span>
+                <span style="float: right"
+                  ><i class="bi bi-three-dots"></i
+                ></span>
+                <p class="card-text">I...am...your...father... 😘</p>
+                <div id="feed-emoji-container">
+                  <ul class="list-group list-group-horizontal">
+                    <li class="list-group-item">
+                      <i class="bi bi-chat"></i>&emsp;66 &emsp;&emsp;
+                    </li>
+                    <li class="list-group-item">
+                      <i class="bi bi-arrow-repeat"></i>&emsp;6.6k &emsp;&emsp;
+                    </li>
+                    <li class="list-group-item">
+                      <i class="bi bi-heart"></i>&emsp;66.6k &emsp;&emsp;
+                    </li>
+                    <li class="list-group-item">
+                      <i class="bi bi-box-arrow-up"></i>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Tweet NewsFeed ends -->
+        </div>
+        <!-- Tweet section ends -->
+        <!-- MISC section starts -->
+        <div class="col" id="misc-section">
+          <!-- Search bar -->
+          <div class="input-group rounded">
+            <span class="input-group-text border-0" id="search-addon">
+              <i class="bi bi-search"></i>
+            </span>
+            <input
+              type="search"
+              class="form-control rounded"
+              placeholder="Search Twitter"
+              aria-label="Search"
+              aria-describedby="search-addon"
+            />
+          </div>
+          <!-- Trends for you section starts -->
+          <div id="trend-container">
+            <div id="trend-header">
+              <h5 style="display: inline">Trends for you</h5>
+              <span style="float: right"><i class="bi bi-gear"></i></span>
+            </div>
+            <ul class="list-group list-group-right">
+              <li
+                class="
+                  list-group-item-right
+                  d-flex
+                  justify-content-between
+                  align-items-start
+                "
+              >
+                <div class="ms-2 me-auto">
+                  <p id="small-gray-words">Trending in Sweden</p>
+                  <div class="fw-bold">Bulletin</div>
+                  <p id="small-gray-words">6,082 Tweets</p>
+                  <br />
+                </div>
+                <span style="float: right"
+                  ><i class="bi bi-three-dots"></i
+                ></span>
+              </li>
+
+              <li
+                class="
+                  list-group-item-right
+                  d-flex
+                  justify-content-between
+                  align-items-start
+                "
+              >
+                <div class="ms-2 me-auto">
+                  <p id="small-gray-words">Trending in Sweden</p>
+                  <div class="fw-bold">Arlanda</div>
+
+                  <br />
+                </div>
+                <span style="float: right"
+                  ><i class="bi bi-three-dots"></i
+                ></span>
+              </li>
+
+              <li
+                class="
+                  list-group-item-right
+                  d-flex
+                  justify-content-between
+                  align-items-start
+                "
+              >
+                <div class="ms-2 me-auto">
+                  <p id="small-gray-words">Automobile Brands - Trending</p>
+                  <div class="fw-bold">Tesla</div>
+                  <p id="small-gray-words">142K Tweets</p>
+                  <br />
+                </div>
+                <span style="float: right"
+                  ><i class="bi bi-three-dots"></i
+                ></span>
+              </li>
+              <li
+                class="
+                  list-group-item-right
+                  d-flex
+                  justify-content-between
+                  align-items-start
+                "
+              >
+                <div class="ms-2 me-auto">
+                  <p id="small-gray-words">Technology - Trending</p>
+                  <div class="fw-bold">Bitcoin</div>
+                  <p id="small-gray-words">348K Tweets</p>
+                  <br />
+                </div>
+                <span style="float: right"
+                  ><i class="bi bi-three-dots"></i
+                ></span>
+              </li>
+              <li
+                class="
+                  list-group-item-right
+                  d-flex
+                  justify-content-between
+                  align-items-start
+                "
+              >
+                <div class="ms-2 me-auto">
+                  <p id="small-gray-words">Trending in Sweden</p>
+                  <div class="fw-bold">Nordea</div>
+
+                  <br />
+                </div>
+                <span style="float: right"
+                  ><i class="bi bi-three-dots"></i
+                ></span>
+              </li>
+              <li
+                class="
+                  list-group-item-right
+                  d-flex
+                  justify-content-between
+                  align-items-start
+                "
+              >
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold" style="color: #00acee">Show more</div>
+
+                  <br />
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!-- Trends for you section ends -->
+          <!-- Who to follow section starts -->
+          <h5>Who to follow</h5>
+          <div id="follow-container">
+            <div class="card border-0">
+              <div class="card-body">
+                <img
+                  src="https://www.irishtimes.com/polopoly_fs/1.3170107.1501253408!/image/image.jpg_gen/derivatives/ratio_1x1_w1200/image.jpg"
+                  class="img-fluid rounded-circle"
+                  alt="user-img"
+                />
+                <h6 class="card-title" style="display: inline">
+                  <strong>Harry Potter</strong>
+                </h6>
+                <button
+                  style="float: right; display: inline"
+                  class="btn btn-primary"
+                  type="button"
+                >
+                  Follow
+                </button>
+                <p id="tweet-username">@harrythewizard</p>
+              </div>
+            </div>
+            <div class="card border-0">
+              <div class="card-body">
+                <img
+                  src="https://yt3.ggpht.com/ytc/AKedOLSVmFSFGdV4dPKL2mh9syXCY6fsHXGNA_dTpevY=s900-c-k-c0x00ffffff-no-rj"
+                  class="img-fluid rounded-circle"
+                  alt="user-img"
+                />
+                <h6 class="card-title" style="display: inline">
+                  <strong>Mikasa Ackerman</strong>
+                </h6>
+                <button
+                  style="float: right; display: inline"
+                  class="btn btn-primary"
+                  type="button"
+                >
+                  Follow
+                </button>
+                <p id="tweet-username">@mikasaxeren</p>
+              </div>
+            </div>
+            <p id="show-more-follow">Show more</p>
+          </div>
+          <div id="terms-container">
+            <p>Terms of Service &emsp; Privacy Policy &emsp; Cookie Policy</p>
+            <p>Ads info &emsp; More... &emsp; @2021 Twitter, Inc</p>
+          </div>
+          <!-- Who to follow section ends -->
+          <!-- MISC section ends -->
+        </div>
+        <!-- Bottom Nav Bar starts -->
+        <nav class="navbar fixed-bottom navbar-expand-lg navbar-light">
+          <div id="user-bottom-bar-container">
+            <div class="card border-0">
+              <div class="card-body">
+                <img
+                  src="https://images.unsplash.com/photo-1583687534963-565854a3d6d8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=880&q=80"
+                  class="img-fluid rounded-circle"
+                  alt="user-img"
+                />
+                <h6 class="card-title" style="display: inline">
+                  <strong>Tamaki Neko</strong>
+                </h6>
+                <span style="display: inline"
+                  ><i class="bi bi-three-dots"></i
+                ></span>
+                <p id="tweet-username">@tamakineko</p>
+              </div>
+            </div>
+          </div>
+          <ul class="navbar-nav ms-auto">
+            <div class="btn-group dropup">
+              <button
+                type="button"
+                class="btn dropdown-toggle btn-search-bar"
+                style="background-color: rgb(255, 255, 255)"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                id="message-button"
+              >
+                Messages
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="#">KittyCat's Message</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">CatGirl's Message</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">CatBoy's Message</a>
+                </li>
+              </ul>
+            </div>
+          </ul>
+        </nav>
+        <!-- Bottom Nav Bar ends -->
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
